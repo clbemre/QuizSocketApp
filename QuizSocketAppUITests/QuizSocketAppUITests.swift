@@ -2,7 +2,7 @@
 //  QuizSocketAppUITests.swift
 //  QuizSocketAppUITests
 //
-//  Created by CPM on 7.01.2019.
+//  Created by Emre Celebi on 7.01.2019.
 //  Copyright © 2019 cLb. All rights reserved.
 //
 
