@@ -10,9 +10,14 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var lblQuestionNumber: UILabel!
+    @IBOutlet weak var lblWildcard: UILabel!
+
+    @IBOutlet weak var lblQuestion: UILabel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
     }
 
 
