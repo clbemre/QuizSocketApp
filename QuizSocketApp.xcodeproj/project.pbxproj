@@ -10,16 +10,18 @@
 		2C6B81D548C86EE613D53F94 /* Pods_QuizSocketAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 508EDCC48449724C94A05C0D /* Pods_QuizSocketAppTests.framework */; };
 		9586A1226352A3DCB664F8E1 /* Pods_QuizSocketApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 293079BB09AE0F8C5264B1EA /* Pods_QuizSocketApp.framework */; };
 		C4F278023EC5B8CC4483CA06 /* Pods_QuizSocketAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D6E16770B1E17AB652E7781 /* Pods_QuizSocketAppUITests.framework */; };
+		D3286F0821E4141800373D45 /* QuestionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3286F0721E4141800373D45 /* QuestionModel.swift */; };
+		D3286F0B21E4147000373D45 /* QuestionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3286F0A21E4147000373D45 /* QuestionPresenter.swift */; };
+		D3286F0D21E4149100373D45 /* QuestionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3286F0C21E4149100373D45 /* QuestionService.swift */; };
 		D354F52721E344A000A178AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D354F52621E344A000A178AC /* AppDelegate.swift */; };
-		D354F52921E344A000A178AC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D354F52821E344A000A178AC /* ViewController.swift */; };
+		D354F52921E344A000A178AC /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D354F52821E344A000A178AC /* QuestionViewController.swift */; };
 		D354F52C21E344A000A178AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D354F52A21E344A000A178AC /* Main.storyboard */; };
 		D354F52E21E344A200A178AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D354F52D21E344A200A178AC /* Assets.xcassets */; };
 		D354F53121E344A200A178AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D354F52F21E344A200A178AC /* LaunchScreen.storyboard */; };
 		D354F53C21E344A200A178AC /* QuizSocketAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D354F53B21E344A200A178AC /* QuizSocketAppTests.swift */; };
 		D354F54721E344A200A178AC /* QuizSocketAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D354F54621E344A200A178AC /* QuizSocketAppUITests.swift */; };
-		D354F58721E3A4F600A178AC /* SocketIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D354F58621E3A4F600A178AC /* SocketIO.framework */; };
-		D354F58921E3A4F600A178AC /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D354F58821E3A4F600A178AC /* Starscream.framework */; };
 		D354F58B21E3A4F600A178AC /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D354F58A21E3A4F600A178AC /* SwiftyJSON.framework */; };
+		D354F59D21E3DD7300A178AC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D354F59C21E3DD7300A178AC /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,9 +50,12 @@
 		508EDCC48449724C94A05C0D /* Pods_QuizSocketAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuizSocketAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CB25FDAF0A382509EC64E66 /* Pods-QuizSocketAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuizSocketAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-QuizSocketAppTests/Pods-QuizSocketAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		8D6E16770B1E17AB652E7781 /* Pods_QuizSocketAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuizSocketAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3286F0721E4141800373D45 /* QuestionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionModel.swift; sourceTree = "<group>"; };
+		D3286F0A21E4147000373D45 /* QuestionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionPresenter.swift; sourceTree = "<group>"; };
+		D3286F0C21E4149100373D45 /* QuestionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionService.swift; sourceTree = "<group>"; };
 		D354F52321E344A000A178AC /* QuizSocketApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuizSocketApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D354F52621E344A000A178AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D354F52821E344A000A178AC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D354F52821E344A000A178AC /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		D354F52B21E344A000A178AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D354F52D21E344A200A178AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D354F53021E344A200A178AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -64,6 +69,13 @@
 		D354F58621E3A4F600A178AC /* SocketIO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SocketIO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D354F58821E3A4F600A178AC /* Starscream.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Starscream.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D354F58A21E3A4F600A178AC /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D354F59021E3B2AA00A178AC /* SwiftSocket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftSocket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D354F59221E3B43200A178AC /* SocketIO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SocketIO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D354F59421E3B43200A178AC /* Starscream.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Starscream.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D354F59621E3C1BD00A178AC /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D354F59821E3C79500A178AC /* SocketIO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SocketIO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D354F59A21E3C79500A178AC /* Starscream.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Starscream.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D354F59C21E3DD7300A178AC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D61FE455E8217439A6BF3101 /* Pods-QuizSocketAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuizSocketAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QuizSocketAppTests/Pods-QuizSocketAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -72,8 +84,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D354F58721E3A4F600A178AC /* SocketIO.framework in Frameworks */,
-				D354F58921E3A4F600A178AC /* Starscream.framework in Frameworks */,
 				D354F58B21E3A4F600A178AC /* SwiftyJSON.framework in Frameworks */,
 				9586A1226352A3DCB664F8E1 /* Pods_QuizSocketApp.framework in Frameworks */,
 			);
@@ -114,6 +124,12 @@
 		CB0640380937E8E21BDC8D60 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D354F59821E3C79500A178AC /* SocketIO.framework */,
+				D354F59A21E3C79500A178AC /* Starscream.framework */,
+				D354F59621E3C1BD00A178AC /* Alamofire.framework */,
+				D354F59221E3B43200A178AC /* SocketIO.framework */,
+				D354F59421E3B43200A178AC /* Starscream.framework */,
+				D354F59021E3B2AA00A178AC /* SwiftSocket.framework */,
 				D354F58621E3A4F600A178AC /* SocketIO.framework */,
 				D354F58821E3A4F600A178AC /* Starscream.framework */,
 				D354F58A21E3A4F600A178AC /* SwiftyJSON.framework */,
@@ -122,6 +138,62 @@
 				8D6E16770B1E17AB652E7781 /* Pods_QuizSocketAppUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D3286F0221E4136200373D45 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D3286F0421E413C400373D45 /* Models */,
+				D3286F0521E413CC00373D45 /* Views */,
+				D3286F0921E4145C00373D45 /* Presenter */,
+				D3286F0621E413FD00373D45 /* Service */,
+				D354F52821E344A000A178AC /* QuestionViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		D3286F0321E4137900373D45 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				D354F52621E344A000A178AC /* AppDelegate.swift */,
+				D354F52A21E344A000A178AC /* Main.storyboard */,
+				D354F52D21E344A200A178AC /* Assets.xcassets */,
+				D354F52F21E344A200A178AC /* LaunchScreen.storyboard */,
+				D354F53221E344A200A178AC /* Info.plist */,
+				D354F59C21E3DD7300A178AC /* GoogleService-Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		D3286F0421E413C400373D45 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D3286F0721E4141800373D45 /* QuestionModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D3286F0521E413CC00373D45 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D3286F0621E413FD00373D45 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				D3286F0C21E4149100373D45 /* QuestionService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		D3286F0921E4145C00373D45 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				D3286F0A21E4147000373D45 /* QuestionPresenter.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 		D354F51A21E344A000A178AC = {
@@ -149,12 +221,8 @@
 		D354F52521E344A000A178AC /* QuizSocketApp */ = {
 			isa = PBXGroup;
 			children = (
-				D354F52621E344A000A178AC /* AppDelegate.swift */,
-				D354F52821E344A000A178AC /* ViewController.swift */,
-				D354F52A21E344A000A178AC /* Main.storyboard */,
-				D354F52D21E344A200A178AC /* Assets.xcassets */,
-				D354F52F21E344A200A178AC /* LaunchScreen.storyboard */,
-				D354F53221E344A200A178AC /* Info.plist */,
+				D3286F0221E4136200373D45 /* ViewControllers */,
+				D3286F0321E4137900373D45 /* SupportingFiles */,
 			);
 			path = QuizSocketApp;
 			sourceTree = "<group>";
@@ -286,6 +354,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D354F53121E344A200A178AC /* LaunchScreen.storyboard in Resources */,
+				D354F59D21E3DD7300A178AC /* GoogleService-Info.plist in Resources */,
 				D354F52E21E344A200A178AC /* Assets.xcassets in Resources */,
 				D354F52C21E344A000A178AC /* Main.storyboard in Resources */,
 			);
@@ -407,7 +476,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D354F52921E344A000A178AC /* ViewController.swift in Sources */,
+				D3286F0821E4141800373D45 /* QuestionModel.swift in Sources */,
+				D354F52921E344A000A178AC /* QuestionViewController.swift in Sources */,
+				D3286F0D21E4149100373D45 /* QuestionService.swift in Sources */,
+				D3286F0B21E4147000373D45 /* QuestionPresenter.swift in Sources */,
 				D354F52721E344A000A178AC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -586,7 +658,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 942GD4D555;
-				INFOPLIST_FILE = QuizSocketApp/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/QuizSocketApp/SupportingFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -605,7 +677,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 942GD4D555;
-				INFOPLIST_FILE = QuizSocketApp/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/QuizSocketApp/SupportingFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
