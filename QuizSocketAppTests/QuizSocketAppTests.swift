@@ -28,7 +28,11 @@ class QuizSocketAppTests: XCTestCase {
     func testGetQuestion() {
         questionViewController.questionPresenter.getQuestion(id: 0)
         XCTAssertEqual(questionViewController.questionToDisplay.question, "Asagidakilerden hangisi bir renktir?")
+    }
 
+    func testUserJoker() {
+        questionViewController.questionPresenter.checkUserJoker(user: questionViewController.currentUser)
+        XCTAssertEqual("3", "\(questionViewController.currentUser!.joker)")
     }
 
     func testPerformanceExample() {
