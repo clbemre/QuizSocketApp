@@ -8,6 +8,12 @@
 
 import Foundation
 
+/**
+    This structure corresponds to the returned json value from the service.
+ - Important:
+ It is not used as a structure. It is converted to the QuestionViewData class.
+ */
+
 struct QuestionModel {
     var id: Int
     var question: String
@@ -15,5 +21,5 @@ struct QuestionModel {
     var opt2: String
     var opt3: String
     var opt4: String
-    var correctIndex: Int 
+    var correctIndex: Int
 }
