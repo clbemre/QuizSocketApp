@@ -37,6 +37,9 @@ class UserPresenter {
         self.userView = nil
     }
 
+    /**
+     Fetch User Server Mediator
+     */
     func getUser(id: Int) {
         self.userView?.startLoading()
         self.userService?.getUser(id: id, { (model) in
@@ -48,6 +51,9 @@ class UserPresenter {
         })
     }
 
+    /**
+     Check User Joker Server Mediator
+     */
     func checkUserJoker(user: UserViewData) {
         self.userService?.checkUserJoker(id: user.id, { (jokerCount) in
             if jokerCount >= 0 {
@@ -61,6 +67,9 @@ class UserPresenter {
         })
     }
 
+    /**
+     Update User Joker Server Mediator
+     */
     func updateUserJoker(user: UserViewData, _ callBack: @escaping (Bool) -> Void) {
         QuestionViewController.tempUserJoker = user.joker
         self.userView?.startLoading()

@@ -31,11 +31,17 @@ protocol QuestionView: NSObjectProtocol {
      - parameters:
         - question: QuestionViewData is check nil or not nil
      */
-    func updateQuestion(question: QuestionViewData) 
-    
+    func updateQuestion(question: QuestionViewData)
+
     func newQuestion()
-    
+
+    /**
+     The question is correct answer by user
+     */
     func correctAnswerQuestion(selectedIndex: Int)
-    
+
+    /**
+     The question is wrong answer by user
+     */
     func wrongAnswerQuestion(selectedIndex: Int)
 }

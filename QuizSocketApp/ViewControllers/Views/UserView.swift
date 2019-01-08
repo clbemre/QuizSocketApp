@@ -30,10 +30,13 @@ protocol UserView: NSObjectProtocol {
      */
     func setUser(user: UserViewData)
 
+    /**
+     Update User.joker = jokerCount & others
+     */
     func updateUserJokerUI(jokerCount: Int)
-    
+
     func openJokerAlert()
-    
+
     func gameOver()
-    
+
 }

@@ -13,10 +13,10 @@ class QuestionService {
 
     /**
      Returns the question from the service according to ID Value.
-     -returns:
+     - returns:
      CallBack return a QuestionModel
-     -parameters:
-        -id: next question id
+     - parameters:
+        - id: next question id
      */
     func getQuestion(id: Int, _ callBack: @escaping (QuestionModel) -> Void) {
         // şuanda id yerine index gönderiliyor
@@ -26,14 +26,24 @@ class QuestionService {
                 let jsonResult = try JSON(data: data)
 
                 let questions = jsonResult.arrayValue
-                let jsonQuestion = questions[id]
-                callBack(QuestionModel(json: jsonQuestion))
+                if questions.count > 0 {
+                    let jsonQuestion = questions[id]
+                    callBack(QuestionModel(json: jsonQuestion))
+                }
             } catch {
                 // handle error
             }
         }
     }
 
+    /**
+     Check the question correct answer from server
+     - returns:
+     CallBack return a result Bool
+     - parameters:
+        - questionIndex: this question Index
+        - selectedIndex: this selected Index by User
+     */
     func checkCorrectQuestion(questionIndex: Int, selectedIndex: Int, _ callBack: @escaping (Bool) -> Void) {
         if let path = Bundle.main.path(forResource: "questions", ofType: "json") {
             do {

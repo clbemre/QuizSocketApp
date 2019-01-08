@@ -16,6 +16,7 @@ class QuestionViewController: UIViewController {
     @IBOutlet weak var lblWildcard: UILabel!
     @IBOutlet weak var lblQuestion: UILabel!
 
+    // Current question index
     var questionIndex: Int = 0
 
     fileprivate let questionPresenter = QuestionPresenter(questionService: QuestionService())
@@ -26,9 +27,11 @@ class QuestionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Attach View to QuestionPresenter
         self.questionPresenter.attachView(self)
         self.questionPresenter.getQuestion(id: questionIndex)
 
+        // Attach View to UserPresenter
         self.userPresenter.attachView(self)
         self.userPresenter.getUser(id: 1)
 
@@ -64,6 +67,9 @@ extension QuestionViewController: QuestionView {
         button4.setTitle(question.opt4, for: .normal)
     }
 
+    /**
+     Get question from QuestionPresenter
+     */
     func newQuestion() {
         Timer.scheduledTimer(withTimeInterval: 1, repeats: false, block: { (timer) in
             for i in 1...4 {
@@ -76,11 +82,17 @@ extension QuestionViewController: QuestionView {
         })
     }
 
+    /**
+     Correct answer question
+     */
     func correctAnswerQuestion(selectedIndex: Int) {
         self.view.viewWithTag(selectedIndex + 1)?.backgroundColor = UIColor.green
         self.questionPresenter.newQuestion()
     }
 
+    /**
+     Wrong answer question
+     */
     func wrongAnswerQuestion(selectedIndex: Int) {
         self.view.viewWithTag(selectedIndex + 1)?.backgroundColor = UIColor.red
         self.view.viewWithTag(self.questionToDisplay!.correctIndex + 1)?.backgroundColor = UIColor.green
@@ -91,15 +103,24 @@ extension QuestionViewController: QuestionView {
 
 extension QuestionViewController: UserView {
 
+    /**
+     Set current user
+     */
     func setUser(user: UserViewData) {
         self.currentUser = user
     }
 
+    /**
+     Update UI for JOKER
+     */
     func updateUserJokerUI(jokerCount: Int) {
         self.currentUser.joker = jokerCount
         self.lblWildcard.text = "Joker: \(jokerCount)"
     }
 
+    /**
+      Open alert and if user has joker use - new question
+     */
     func openJokerAlert() {
         let alert = UIAlertController(title: "Joker", message: "Use the joker", preferredStyle: .alert)
         let useWildCardAction = UIAlertAction(title: "Use Joker", style: .default) { (alert) in
@@ -120,6 +141,9 @@ extension QuestionViewController: UserView {
         self.present(alert, animated: true, completion: nil)
     }
 
+    /**
+     Game Over
+     */
     func gameOver() {
         self.view.isUserInteractionEnabled = false
         print("GameOver")

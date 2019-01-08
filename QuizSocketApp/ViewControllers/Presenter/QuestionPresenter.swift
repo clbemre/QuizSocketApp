@@ -39,7 +39,7 @@ class QuestionPresenter {
     /**
         Service Request mediator
      - parameters:
-        -id: next question id
+        - id: next question id
      */
     func getQuestion(id: Int) {
         self.questionView?.startLoading()
@@ -48,6 +48,12 @@ class QuestionPresenter {
         })
     }
 
+    /**
+     Check the question answer mediator server
+     - parameters:
+        - questionIndex: this question Index
+        - selectedIndex: this selected Index by User
+     */
     func checkCorrectQuestion(questionIndex: Int, selectedIndex: Int) {
         self.questionView?.startLoading()
         self.questionService?.checkCorrectQuestion(questionIndex: questionIndex, selectedIndex: selectedIndex, { (result) in
