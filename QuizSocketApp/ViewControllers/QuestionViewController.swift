@@ -52,10 +52,12 @@ extension QuestionViewController: QuestionView {
         questionToDisplay = question
         lblQuestionNumber.text = "\(questionIndex + 1)" // index 0'dan başladığı için +1
         lblQuestion.text = question.question
+        // Bütün buttonlara tag verildi ve tagler üzerinden erişiliyor.
         let button1 = self.view.viewWithTag(1) as! UIButton
         let button2 = self.view.viewWithTag(2) as! UIButton
         let button3 = self.view.viewWithTag(3) as! UIButton
         let button4 = self.view.viewWithTag(4) as! UIButton
+        
         button1.setTitle(question.opt1, for: .normal)
         button2.setTitle(question.opt2, for: .normal)
         button3.setTitle(question.opt3, for: .normal)
@@ -140,6 +142,6 @@ extension QuestionViewController: QuestionView {
     func gameOver() {
         self.view.isUserInteractionEnabled = false
         print("GameOver")
-    } 
+    }
 }
 

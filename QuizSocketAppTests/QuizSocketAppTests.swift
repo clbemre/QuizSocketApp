@@ -37,6 +37,7 @@ class QuizSocketAppTests: XCTestCase {
 
     func testPerformanceExample() {
         self.measure {
+            
         }
     }
 }
