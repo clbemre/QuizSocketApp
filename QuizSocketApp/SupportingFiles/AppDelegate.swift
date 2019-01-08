@@ -37,3 +37,41 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+// var manager: SocketManager!
+// var socketIOClient: SocketIOClient!
+
+// self.ConnectToSocket()
+
+// /   func ConnectToSocket() {
+//
+//        manager = SocketManager(socketURL: URL(string: "http://localhost:4001")!, config:
+//        [.log(true), .compress])
+//        socketIOClient = manager.defaultSocket
+//
+//        socketIOClient.on(clientEvent: .connect) { data, ack in
+//            // print(data)
+//            print("e:socket connected")
+//        }
+//
+//        socketIOClient.on(clientEvent: .error) { (data, eck) in
+//            // print(data)
+//            print("e:socket error")
+//        }
+//
+//        socketIOClient.on(clientEvent: .disconnect) { (data, eck) in
+//            // print(data)
+//            print("e:socket disconnect")
+//        }
+//
+//        socketIOClient.on(clientEvent: SocketClientEvent.reconnect) { (data, eck) in
+//            // print(data)
+//            print("e:socket reconnect")
+//        }
+//
+//        socketIOClient.on("FromAPI") { (data, ack) in
+//            print("gelenData:\(data)")
+//        }
+//
+//        socketIOClient.connect()
+//    }
+

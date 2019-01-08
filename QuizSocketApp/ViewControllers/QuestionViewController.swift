@@ -16,9 +16,6 @@ class QuestionViewController: UIViewController {
     @IBOutlet weak var lblWildcard: UILabel!
     @IBOutlet weak var lblQuestion: UILabel!
 
-    // var manager: SocketManager!
-    // var socketIOClient: SocketIOClient!
-
     var questionIndex: Int = 0
 
     fileprivate let questionPresenter = QuestionPresenter(questionService: QuestionService())
@@ -29,7 +26,6 @@ class QuestionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // self.ConnectToSocket()
         self.questionPresenter.attachView(self)
         self.questionPresenter.getQuestion(id: questionIndex)
 
@@ -41,38 +37,6 @@ class QuestionViewController: UIViewController {
     @IBAction func AnswerAction(_ sender: UIButton) {
         self.checkAnswered(index: sender.tag - 1, correctIndex: questionToDisplay.correctIndex) // index 0 dan başlıyor ama tagleri 1 den başlattığım için -1 yapıyorum
     }
-
-//    func ConnectToSocket() {
-//
-//        manager = SocketManager(socketURL: URL(string: "http://localhost:4001")!, config: [.log(true), .compress])
-//        socketIOClient = manager.defaultSocket
-//
-//        socketIOClient.on(clientEvent: .connect) { data, ack in
-//            // print(data)
-//            print("e:socket connected")
-//        }
-//
-//        socketIOClient.on(clientEvent: .error) { (data, eck) in
-//            // print(data)
-//            print("e:socket error")
-//        }
-//
-//        socketIOClient.on(clientEvent: .disconnect) { (data, eck) in
-//            // print(data)
-//            print("e:socket disconnect")
-//        }
-//
-//        socketIOClient.on(clientEvent: SocketClientEvent.reconnect) { (data, eck) in
-//            // print(data)
-//            print("e:socket reconnect")
-//        }
-//
-//        socketIOClient.on("FromAPI") { (data, ack) in
-//            print("gelenData:\(data)")
-//        }
-//
-//        socketIOClient.connect()
-//    }
 }
 
 extension QuestionViewController: QuestionView {
