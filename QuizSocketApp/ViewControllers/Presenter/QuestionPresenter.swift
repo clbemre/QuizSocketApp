@@ -48,16 +48,19 @@ class QuestionPresenter {
         })
     }
 
+    func checkCorrectQuestion(questionIndex: Int, selectedIndex: Int) {
+        self.questionView?.startLoading()
+        self.questionService?.checkCorrectQuestion(questionIndex: questionIndex, selectedIndex: selectedIndex, { (result) in
+            if result {
+                self.questionView?.correctAnswerQuestion(selectedIndex: selectedIndex)
+            } else {
+                self.questionView?.wrongAnswerQuestion(selectedIndex: selectedIndex)
+            }
+        })
+    }
+
     func newQuestion() {
         self.questionView?.newQuestion()
-    }
-
-    func correctAnswerQuestion(selectedIndex: Int) {
-        self.questionView?.correctAnswerQuestion(selectedIndex: selectedIndex)
-    }
-
-    func wrongAnswerQuestion(selectedIndex: Int) {
-        self.questionView?.wrongAnswerQuestion(selectedIndex: selectedIndex)
     }
 }
 

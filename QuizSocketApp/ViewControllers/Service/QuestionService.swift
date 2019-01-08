@@ -33,4 +33,21 @@ class QuestionService {
             }
         }
     }
+
+    func checkCorrectQuestion(questionIndex: Int, selectedIndex: Int, _ callBack: @escaping (Bool) -> Void) {
+        if let path = Bundle.main.path(forResource: "questions", ofType: "json") {
+            do {
+                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+                let jsonResult = try JSON(data: data)
+
+                let questions = jsonResult.arrayValue
+                let jsonQuestion = questions[questionIndex]
+                let jsonQuestionIndex = jsonQuestion["correctIndex"].intValue
+                let result = selectedIndex == jsonQuestionIndex
+                callBack(result)
+            } catch {
+                // handle error
+            }
+        }
+    }
 }

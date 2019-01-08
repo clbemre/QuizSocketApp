@@ -61,12 +61,13 @@ class UserPresenter {
         })
     }
 
-    func updateUserJoker(user: UserViewData) {
+    func updateUserJoker(user: UserViewData, _ callBack: @escaping (Bool) -> Void) {
         QuestionViewController.tempUserJoker = user.joker
         self.userView?.startLoading()
         self.userService?.updateUserJoker(id: user.id, { (jokerCount) in
             self.userView?.updateUserJokerUI(jokerCount: jokerCount)
+            callBack(true)
         })
-    } 
+    }
 
 }

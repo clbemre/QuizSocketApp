@@ -35,7 +35,8 @@ class QuestionViewController: UIViewController {
     }
 
     @IBAction func AnswerAction(_ sender: UIButton) {
-        self.checkAnswered(index: sender.tag - 1, correctIndex: questionToDisplay.correctIndex) // index 0 dan başlıyor ama tagleri 1 den başlattığım için -1 yapıyorum
+        self.view.isUserInteractionEnabled = false
+        self.questionPresenter.checkCorrectQuestion(questionIndex: questionIndex, selectedIndex: sender.tag - 1)
     }
 }
 
@@ -63,20 +64,12 @@ extension QuestionViewController: QuestionView {
         button4.setTitle(question.opt4, for: .normal)
     }
 
-    func checkAnswered(index: Int, correctIndex: Int) {
-        self.view.isUserInteractionEnabled = false
-        if correctIndex == index {
-            self.questionPresenter.correctAnswerQuestion(selectedIndex: index)
-        } else {
-            self.questionPresenter.wrongAnswerQuestion(selectedIndex: index)
-        }
-    }
-
     func newQuestion() {
         Timer.scheduledTimer(withTimeInterval: 1, repeats: false, block: { (timer) in
             for i in 1...4 {
                 self.view.viewWithTag(i)?.backgroundColor = UIColor.clear
             }
+
             self.view.isUserInteractionEnabled = true
             self.questionIndex = self.questionIndex + 1
             self.questionPresenter.getQuestion(id: self.questionIndex)
@@ -111,9 +104,12 @@ extension QuestionViewController: UserView {
         let alert = UIAlertController(title: "Joker", message: "Use the joker", preferredStyle: .alert)
         let useWildCardAction = UIAlertAction(title: "Use Joker", style: .default) { (alert) in
             self.currentUser.joker = self.currentUser.joker - 1
-            self.userPresenter.updateUserJoker(user: self.currentUser)
+            self.userPresenter.updateUserJoker(user: self.currentUser, { (result) in
+                if result {
+                    self.questionPresenter.newQuestion()
+                }
+            })
 
-            self.questionPresenter.newQuestion()
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (alert) in
             self.gameOver()
