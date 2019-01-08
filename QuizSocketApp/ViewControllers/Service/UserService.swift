@@ -9,6 +9,9 @@
 import Foundation
 import SwiftyJSON
 
+/**
+ Normalde socket ile haberleşmesi gerekiyor. Ancak neden socket entegre etmediğimi detaylıca tarafınıza ilettim.
+ */
 class UserService {
 
     /**
