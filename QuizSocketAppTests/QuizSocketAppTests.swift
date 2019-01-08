@@ -11,22 +11,28 @@ import XCTest
 
 class QuizSocketAppTests: XCTestCase {
 
+    var questionViewController: QuestionViewController!
+
     override func setUp() {
-        
+        super.setUp()
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let vc = (storyboard.instantiateInitialViewController() as! QuestionViewController)
+        questionViewController = vc
+        _ = questionViewController.view // To call viewDidLoad
     }
 
     override func tearDown() {
-        
+        super.tearDown()
     }
 
-    func testExample() {
-        
+    func testGetQuestion() {
+        questionViewController.questionPresenter.getQuestion(id: 0)
+        XCTAssertEqual(questionViewController.questionToDisplay.question, "Asagidakilerden hangisi bir renktir?")
+
     }
 
     func testPerformanceExample() {
         self.measure {
-
         }
     }
-
 }

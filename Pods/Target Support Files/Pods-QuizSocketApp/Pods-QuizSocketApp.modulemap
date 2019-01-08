@@ -1,0 +1,6 @@
+framework module Pods_QuizSocketApp {
+  umbrella header "Pods-QuizSocketApp-umbrella.h"
+
+  export *
+  module * { export * }
+}

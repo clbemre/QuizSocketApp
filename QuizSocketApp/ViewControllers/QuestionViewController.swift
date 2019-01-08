@@ -19,10 +19,10 @@ class QuestionViewController: UIViewController {
     // Current question index
     var questionIndex: Int = 0
 
-    fileprivate let questionPresenter =
+    let questionPresenter =
         QuestionPresenter(questionService: QuestionService(), userService: UserService())
-    fileprivate var questionToDisplay: QuestionViewData!
-    fileprivate var currentUser: UserViewData!
+    var questionToDisplay: QuestionViewData!
+    var currentUser: UserViewData!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +39,7 @@ class QuestionViewController: UIViewController {
 }
 
 extension QuestionViewController: QuestionView {
-    
+
     func startLoading() {
         print("start loading")
     }
@@ -140,6 +140,6 @@ extension QuestionViewController: QuestionView {
     func gameOver() {
         self.view.isUserInteractionEnabled = false
         print("GameOver")
-    }
+    } 
 }
 
