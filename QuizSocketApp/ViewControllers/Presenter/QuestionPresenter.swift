@@ -15,10 +15,12 @@ import Foundation
 class QuestionPresenter {
 
     fileprivate let questionService: QuestionService?
+    fileprivate let userService: UserService?
     weak fileprivate var questionView: QuestionView?
 
-    init(questionService: QuestionService) {
+    init(questionService: QuestionService, userService: UserService) {
         self.questionService = questionService
+        self.userService = userService
     }
     /**
      The ViewController class that implements the QuestionView protocol is sent here.
@@ -67,6 +69,50 @@ class QuestionPresenter {
 
     func newQuestion() {
         self.questionView?.newQuestion()
+    }
+
+    /////
+
+    /**
+     Fetch User Server Mediator
+     */
+    func getUser(id: Int) {
+        self.questionView?.startLoading()
+        self.userService?.getUser(id: id, { (model) in
+            let user = UserViewData.init(id: model.id, name: model.name, joker: model.joker)
+            self.questionView?.setUser(user: user)
+            if model.joker >= 0 {
+                self.questionView?.updateUserJokerUI(jokerCount: model.joker)
+            }
+        })
+    }
+
+    /**
+     Check User Joker Server Mediator
+     */
+    func checkUserJoker(user: UserViewData) {
+        self.userService?.checkUserJoker(id: user.id, { (jokerCount) in
+            if jokerCount >= 0 {
+                self.questionView?.updateUserJokerUI(jokerCount: jokerCount)
+            }
+            if jokerCount > 0 {
+                self.questionView?.openJokerAlert()
+            } else {
+                self.questionView?.gameOver()
+            }
+        })
+    }
+
+    /**
+     Update User Joker Server Mediator
+     */
+    func updateUserJoker(user: UserViewData, _ callBack: @escaping (Bool) -> Void) {
+        QuestionViewController.tempUserJoker = user.joker
+        self.questionView?.startLoading()
+        self.userService?.updateUserJoker(id: user.id, { (jokerCount) in
+            self.questionView?.updateUserJokerUI(jokerCount: jokerCount)
+            callBack(true)
+        })
     }
 }
 

@@ -7,23 +7,12 @@
 //
 
 import Foundation
-/**
- This structure is used to print the data from the QuestionModel.
- */
-struct QuestionViewData {
-    var id: Int
-    var question: String
-    var opt1: String
-    var opt2: String
-    var opt3: String
-    var opt4: String
-    var correctIndex: Int
-}
 
 /**
  This protocol is used to perform operations on QuestionViewController.
  */
 protocol QuestionView: NSObjectProtocol {
+    
     func startLoading()
     func finishLoading()
     /**
@@ -44,4 +33,19 @@ protocol QuestionView: NSObjectProtocol {
      The question is wrong answer by user
      */
     func wrongAnswerQuestion(selectedIndex: Int)
+    
+    /**
+     - parameters:
+     - user: from response UserModel convert to UserViewData
+     */
+    func setUser(user: UserViewData)
+    
+    /**
+     Update User.joker = jokerCount & others
+     */
+    func updateUserJokerUI(jokerCount: Int)
+    
+    func openJokerAlert()
+    
+    func gameOver()
 }
