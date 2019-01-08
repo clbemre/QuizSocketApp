@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 class UserService {
 
@@ -18,8 +19,18 @@ class UserService {
         -id: from database user id
      */
     func getUser(id: Int, _ callBack: @escaping (UserModel) -> Void) {
-        let userModel = UserModel.init(id: 1, name: "Emre", joker: QuestionViewController.tempUserJoker)
-        callBack(userModel)
+        if let path = Bundle.main.path(forResource: "users", ofType: "json") {
+            do {
+                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+                let jsonResult = try JSON(data: data)
+
+                let users = jsonResult.arrayValue
+                let jsonUser = users[id - 1] // id 1den index 0 dan başladığı için - 1 yapıyorum.
+                callBack(UserModel(json: jsonUser))
+            } catch {
+                // handle error
+            }
+        }
     }
 
     func checkUserJoker(id: Int, _ callBack: @escaping (Int) -> Void) {

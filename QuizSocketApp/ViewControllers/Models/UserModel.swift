@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 /**
  This structure corresponds to the returned json value from the service.
@@ -17,4 +18,12 @@ struct UserModel {
     var id: Int
     var name: String
     var joker: Int
+}
+
+extension UserModel {
+    init(json: JSON) {
+        self.id = json["id"].intValue
+        self.name = json["name"].stringValue
+        self.joker = json["joker"].intValue
+    }
 }

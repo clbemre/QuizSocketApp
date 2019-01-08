@@ -10,7 +10,7 @@ import UIKit
 
 class QuestionViewController: UIViewController {
 
-    public static var tempUserJoker: Int = 3 // temp
+    public static var tempUserJoker: Int = 3 // temp test data
 
     @IBOutlet weak var lblQuestionNumber: UILabel!
     @IBOutlet weak var lblWildcard: UILabel!
@@ -64,6 +64,7 @@ extension QuestionViewController: QuestionView {
     }
 
     func checkAnswered(index: Int, correctIndex: Int) {
+        self.view.isUserInteractionEnabled = false
         if correctIndex == index {
             self.questionPresenter.correctAnswerQuestion(selectedIndex: index)
         } else {
@@ -76,6 +77,7 @@ extension QuestionViewController: QuestionView {
             for i in 1...4 {
                 self.view.viewWithTag(i)?.backgroundColor = UIColor.clear
             }
+            self.view.isUserInteractionEnabled = true
             self.questionIndex = self.questionIndex + 1
             self.questionPresenter.getQuestion(id: self.questionIndex)
         })

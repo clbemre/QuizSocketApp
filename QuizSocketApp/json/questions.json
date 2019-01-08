@@ -1,0 +1,47 @@
+[
+    {
+        "id": "1",
+        "question": "Asagidakilerden hangisi bir renktir?",
+        "option1": "Araba",
+        "option2": "Ev",
+        "option3": "Hayal",
+        "option4": "Mor",
+        "correctIndex": "3"
+    },
+    {
+        "id": "2",
+        "question": "Dunyanin sekli nedir?",
+        "option1": "Kare",
+        "option2": "Dikdortgen",
+        "option3": "Yuvarlak",
+        "option4": "Duz",
+        "correctIndex": "2"
+    },
+    {
+        "id": "3",
+        "question": "What is JAVA?",
+        "option1": "A programming language.",
+        "option2": "A bird",
+        "option3": "A Color",
+        "option4": "A Doctor",
+        "correctIndex": "0"
+    },
+    {
+        "id": "4",
+        "question": "Asagidakilerden hangisi digerlerinden farklidir?",
+        "option1": "Kus",
+        "option2": "Ari",
+        "option3": "Goril",
+        "option4": "Ruya",
+        "correctIndex": "3"
+    },
+    {
+        "id": "6",
+        "question": "4x2?",
+        "option1": "1",
+        "option2": "2",
+        "option3": "8",
+        "option4": "16",
+        "correctIndex": "2"
+    }
+]

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 class QuestionService {
 
@@ -18,17 +19,18 @@ class QuestionService {
         -id: next question id
      */
     func getQuestion(id: Int, _ callBack: @escaping (QuestionModel) -> Void) {
-        callBack(QuestionBank().questions[id])
-    }
-}
+        // şuanda id yerine index gönderiliyor
+        if let path = Bundle.main.path(forResource: "questions", ofType: "json") {
+            do {
+                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+                let jsonResult = try JSON(data: data)
 
-// TEST DATA
-class QuestionBank {
-    var questions = [QuestionModel]()
-    init() {
-        for i in 0...10 {
-            let question = QuestionModel.init(id: i, question: "Soru \(i + 1)", opt1: "opt 1\(i)", opt2: "opt 2\(i)", opt3: "opt 3\(i)", opt4: "opt4\(i)", correctIndex: i % 2)
-            questions.append(question)
+                let questions = jsonResult.arrayValue
+                let jsonQuestion = questions[id]
+                callBack(QuestionModel(json: jsonQuestion))
+            } catch {
+                // handle error
+            }
         }
     }
 }
